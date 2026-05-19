@@ -32,7 +32,7 @@
                     </p>
                 </div>
 
-                <div>
+                <div class="mb-4">
                     <h5 class="fw-bold text-primary mb-3"><i class="bi bi-heart-fill me-2"></i>Mis Hobbies</h5>
                     <div class="row g-3">
                         
@@ -87,7 +87,10 @@
                     </div>
                 </div>
 
-                <div class="border-top mt-4 pt-3 text-end">
+                <div class="border-top mt-4 pt-3 d-flex justify-content-between align-items-center">
+                    <a href="contact.php" class="btn btn-outline-primary rounded-3 btn-sm px-3 shadow-sm d-inline-flex align-items-center">
+                        <i class="bi bi-envelope-fill me-2"></i> Formulario de Contacto
+                    </a>
                     <small class="text-muted">Quito, Ecuador &bull; Proyecto Académico 2026</small>
                 </div>
 
