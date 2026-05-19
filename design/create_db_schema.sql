@@ -37,15 +37,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `macb_ape`.`formulario_contacto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `correo` VARCHAR(45) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
   `mensaje` LONGTEXT NOT NULL,
-  `id_usuario` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_formulario_contacto_usuarios_idx` (`id_usuario` ASC) VISIBLE,
-  CONSTRAINT `fk_formulario_contacto_usuarios`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `macb_ape`.`usuarios` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
