@@ -5,20 +5,20 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema macb_dw
+-- Schema macb_ape
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `macb_dw` ;
+DROP SCHEMA IF EXISTS `macb_ape` ;
 
 -- -----------------------------------------------------
--- Schema macb_dw
+-- Schema macb_ape
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `macb_dw` DEFAULT CHARACTER SET utf8 ;
-USE `macb_dw` ;
+CREATE SCHEMA IF NOT EXISTS `macb_ape` DEFAULT CHARACTER SET utf8 ;
+USE `macb_ape` ;
 
 -- -----------------------------------------------------
--- Table `macb_dw`.`usuarios`
+-- Table `macb_ape`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `macb_dw`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `macb_ape`.`usuarios` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `cedula` VARCHAR(10) NOT NULL,
   `nombre` VARCHAR(100) NOT NULL,
@@ -29,6 +29,23 @@ CREATE TABLE IF NOT EXISTS `macb_dw`.`usuarios` (
   UNIQUE INDEX `cedula_UNIQUE` (`cedula` ASC) VISIBLE,
   UNIQUE INDEX `correo_UNIQUE` (`correo` ASC) VISIBLE,
   PRIMARY KEY (`id_usuario`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `macb_ape`.`formulario_contacto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `macb_ape`.`formulario_contacto` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `correo` VARCHAR(45) NOT NULL,
+  `mensaje` LONGTEXT NOT NULL,
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_formulario_contacto_usuarios_idx` (`id_usuario` ASC) VISIBLE,
+  CONSTRAINT `fk_formulario_contacto_usuarios`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `macb_ape`.`usuarios` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -42,7 +59,7 @@ IDENTIFIED BY 'MacbApp2026!';
 
 -- Permisos sobre la base
 GRANT ALL PRIVILEGES
-ON macb_dw.*
+ON macb_ape.*
 TO 'macb_app'@'localhost';
 
 FLUSH PRIVILEGES;
@@ -51,7 +68,7 @@ FLUSH PRIVILEGES;
 -- -----------------------------------------------------
 -- Inserción de Usuario Administrador
 -- -----------------------------------------------------
-USE `macb_dw` ;
+USE `macb_ape` ;
 
 INSERT INTO `usuarios`
 (cedula, nombre, correo, clave_segura)
