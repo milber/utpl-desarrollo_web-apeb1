@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `macb_ape`.`formulario_contacto` (
   `correo` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(100) NOT NULL,
   `mensaje` LONGTEXT NOT NULL,
+  `fecha_registro` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
