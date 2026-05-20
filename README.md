@@ -1,13 +1,6 @@
 # Sistema de Gestión de Usuarios - Proyecto Académico UTPL
 
-Este es un proyecto académico desarrollado para la materia de **Desarrollo Web** en la carrera de **Tecnologías de la Información**. La aplicación consiste en un sistema integral de gestión de perfiles de usuario, con un enfoque principal en la seguridad y la correcta arquitectura de software.
-
-## 🎯 Objetivos del Proyecto
-* Implementar un sistema de autenticación seguro (Login/Logout).
-* Permitir el registro de nuevos usuarios con validación de datos.
-* Facilitar la gestión de perfil (actualización de nombre, correo y seguimiento de fechas de modificación).
-* Implementar un módulo de cambio de contraseña con validación de credenciales actuales.
-* **Seguridad:** Garantizar que todas las contraseñas se almacenen de forma segura mediante encriptación de una sola vía en la base de datos.
+Este es un proyecto académico desarrollado para la materia de **Desarrollo Web** en la carrera de **Tecnologías de la Información**. La aplicación consiste en un sistema que muestre una página informativa, y presente un formulario de contacto. Además se ha agregado que un usuario admin pueed listar los mensajes de contacto recibidos.
 
 ## 🛠️ Stack Tecnológico
 * **Lenguaje:** PHP 8.x
@@ -22,21 +15,19 @@ Este es un proyecto académico desarrollado para la materia de **Desarrollo Web*
 3.  **Gestor de BD:** MySQL / MariaDB.
 4.  **Extensión MySQLi:** Habilitada en PHP para la conexión a la base de datos.
 
-## 🔒 Seguridad de Contraseñas
-El sistema no almacena contraseñas en texto plano. Se utiliza la función nativa de PHP `password_hash()` con el algoritmo **PASSWORD_DEFAULT**, lo que genera una cadena encriptada única. Para la verificación en el acceso, se emplea `password_verify()`, garantizando la integridad de la información incluso ante posibles accesos no autorizados a la base de datos.
-
 ## 🚀 Configuración e Instalación
 
 ### 1. Clona el proyecto
-https://github.com/milber/utpl-desarrollo-web-macb
+https://github.com/milber/utpl-desarrollo_web-apeb1
 
 
 ### 2. Preparación de la Base de Datos
-Debes ejecutar el script de SQL proporcionado en https://github.com/milber/utpl-desarrollo-web-macb/blob/master/design/create_db_schema.sql para configurar el entorno. El script realiza lo siguiente:
+Debes ejecutar el script de SQL proporcionado en https://github.com/milber/utpl-desarrollo_web-apeb1/blob/master/design/create_db_schema.sql para configurar el entorno. El script realiza lo siguiente:
 
-* Crea el esquema `macb_dw`.
+* Crea el esquema `macb_ape`.
 * Crea la tabla `usuarios` con restricciones de unicidad para Cédula y Correo.
 * Crea un usuario de base de datos específico (`macb_app`) con permisos restringidos por seguridad.
+* Crea la tabla `formulario contacto`.
 * Inserta un usuario **Administrador** por defecto.
 
 **Pasos:**
@@ -56,11 +47,11 @@ Debes ejecutar el script de SQL proporcionado en https://github.com/milber/utpl-
 
 ## 📂 Estructura del Proyecto
 * `index.php`: Carátula académica y redirección inicial.
-* `login.php` / `register.php`: Formularios de acceso y creación de cuenta.
+* `login.php`: Formularios de acceso para el usuario admin.
 * `create_session.php`: Crea la sessión.
-* `perfil.php`: Visualización de datos del usuario.
-* `edit_perfil.php` / `edit_password.php`: Interfaces de actualización.
-* `update_user.php` / `update_password.php`: Lógica de procesamiento en el servidor.
+* `author.php`: Visualización de información pública del autro.
+* `contact.php`: Interfaces de formulario de contacto.
+* `insert_contact.php`: Lógica de procesamiento el formulario de contacto.
 * `alerts.php`: Componente centralizado de mensajes y notificaciones.
 
 ---
