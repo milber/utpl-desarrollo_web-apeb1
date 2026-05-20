@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <form action="procesar_contacto.php" method="POST" class="needs-validation" novalidate>
+                <form action="insert_contact.php" method="POST" class="needs-validation" novalidate>
                     <div class="row g-3">
                         
                         <div class="col-12">
@@ -85,6 +85,6 @@
       })
     })()
 </script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

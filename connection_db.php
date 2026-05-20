@@ -12,7 +12,7 @@
 
     $user = "macb_app";
     $pass = "MacbApp2026!";
-    $db   = "macb_dw";
+    $db   = "macb_ape";
 
     $conn = new mysqli($host, $user, $pass, $db);
 

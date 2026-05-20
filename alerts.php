@@ -45,6 +45,10 @@
         $mensaje_exito = "";
 
         switch ($_GET['status']) {
+            // ¡AQUÍ ES DONDE DEBE ESTAR!
+            case 'message_success':
+                $mensaje_exito = "<strong>¡Enviado!</strong> Tu mensaje ha sido registrado con éxito. El autor se pondrá en contacto contigo.";
+                break;
             case 'reg_success':
                 $mensaje_exito = "<strong>¡Éxito!</strong> Tu cuenta ha sido creada. Ya puedes iniciar sesión.";
                 break;
