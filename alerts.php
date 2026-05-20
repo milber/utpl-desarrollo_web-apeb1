@@ -13,6 +13,9 @@
             case 'correo_duplicado':
                 $mensaje = "<strong>Error:</strong> Este correo electrónico ya está en uso.";
                 break;
+            case 'acceso_denegado':
+                $mensaje = "<strong>Seguridad:</strong> Acceso no autorizado para ver los mensajes.";
+                break;
             case 'campos_vacios':
             case 'campos_invalidos':
                 $mensaje = "<strong>¡Atención!</strong> Por favor, llena todos los campos correctamente.";

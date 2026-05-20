@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion']) && $_POST['
             $_SESSION['user_fecha_registro'] = $user['fecha_registro'];
             $_SESSION['start_time'] = time();
 
-            // Redirección a perfil
-            header("Location: perfil.php");
+            // Redirección a los mensajes
+            header("Location: messages.php");
             exit();
         }
     }
