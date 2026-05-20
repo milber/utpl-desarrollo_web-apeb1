@@ -42,10 +42,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary w-100 shadow-sm">Entrar</button>
                         </form>
-                        <div class="text-center mt-4">
-                            <span class="text-muted small">¿No tienes cuenta?</span><br>
-                            <button type="button" class="btn btn-link text-decoration-none fw-bold" data-bs-toggle="collapse" data-bs-target=".multi-collapse">Regístrate aquí</button>
-                        </div>
                     </div>
 
                     <div class="collapse multi-collapse" id="register-form">

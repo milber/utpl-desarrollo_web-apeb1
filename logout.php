@@ -5,6 +5,6 @@
     session_destroy();
 
     // redirección a clase principal
-    header("Location: login.php");
+    header("Location: author.php");
     exit();
 ?>
