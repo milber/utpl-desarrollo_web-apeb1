@@ -1,4 +1,4 @@
-# Sistema de Gestión de Usuarios - Proyecto Académico UTPL
+# Sistema de Formulario de Contacto- Proyecto Académico UTPL
 
 Este es un proyecto académico desarrollado para la materia de **Desarrollo Web** en la carrera de **Tecnologías de la Información**. La aplicación consiste en un sistema que muestre una página informativa, y presente un formulario de contacto. Además se ha agregado que un usuario admin pueed listar los mensajes de contacto recibidos.
 
@@ -53,6 +53,20 @@ Debes ejecutar el script de SQL proporcionado en https://github.com/milber/utpl-
 * `contact.php`: Interfaces de formulario de contacto.
 * `insert_contact.php`: Lógica de procesamiento el formulario de contacto.
 * `alerts.php`: Componente centralizado de mensajes y notificaciones.
+
+
+# Sistema de Formulario de Contacto - Proyecto Académico UTPL
+
+URL de inicio:  https://milber.free.nf/index.html
+
+Para ingresar como adminstrador:  https://milber.free.nf/login.php
+
+
+* `correo`      : admin@admin.com
+* `contraseña` : Pa55word
+
+Nota: Se agregó una página para que el administrador revise los mensajes recibidos
+
 
 ---
 **Autor:** Milber Champutiz Burbano  
