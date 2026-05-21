@@ -1,4 +1,7 @@
 <?php
+// Forzar a PHP a usar la zona horaria de Ecuador
+date_default_timezone_set('America/Guayaquil');
+
 require_once 'create_session.php';
 protect_page();
 
@@ -16,7 +19,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] != 1) {
 require_once 'connection_db.php';
 
 // Consultar todos los mensajes registrados, ordenados del más reciente al más antiguo
-$sql = "SELECT id, nombre, correo, mensaje FROM formulario_contacto ORDER BY fecha_registro DESC";
+$sql = "SELECT id, nombre, correo, mensaje, fecha_registro FROM formulario_contacto ORDER BY fecha_registro DESC";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -54,13 +57,14 @@ $result = $conn->query($sql);
 
                 <?php if ($result && $result->num_rows > 0): ?>
                     <div class="table-responsive">
-                        <table class="table table-hover align-middle border-0">
+                        <table class="table table-hover align-top border-0">
                             <thead class="table-light text-secondary small fw-bold">
                                 <tr>
-                                    <th scope="col" class="ps-3" style="width: 8%;">ID</th>
-                                    <th scope="col" style="width: 22%;">REMITENTE</th>
-                                    <th scope="col" style="width: 25%;">CORREO ELECTRÓNICO</th>
-                                    <th scope="col" style="width: 45%;" class="pe-3">MENSAJE</th>
+                                    <th scope="col" class="ps-3" style="width: 7%;">ID</th>
+                                    <th scope="col" style="width: 18%;">REMITENTE</th>
+                                    <th scope="col" style="width: 20%;">CORREO</th>
+                                    <th scope="col" style="width: 38%;">MENSAJE</th>
+                                    <th scope="col" style="width: 17%;" class="pe-3">FECHA Y HORA</th>
                                 </tr>
                             </thead>
                             <tbody class="text-secondary">
@@ -79,6 +83,9 @@ $result = $conn->query($sql);
                                         </td>
                                         <td class="pe-3 lh-sm text-justify">
                                             <?php echo nl2br(htmlspecialchars($row['mensaje'])); ?>
+                                        </td>
+                                        <td class="pe-3 lh-sm text-justify">
+                                            <?php echo date("d/m/Y H:i", strtotime($row['fecha_registro'])); ?>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
@@ -109,6 +116,6 @@ $result = $conn->query($sql);
 $result->free();
 $conn->close();
 ?>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

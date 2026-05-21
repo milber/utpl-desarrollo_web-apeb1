@@ -1,4 +1,7 @@
 <?php
+ // Forzar a PHP a usar la zona horaria de Ecuador
+date_default_timezone_set('America/Guayaquil');
+
 require_once 'connection_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
